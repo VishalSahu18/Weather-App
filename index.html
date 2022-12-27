@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weather App</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Weather App</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"k
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About this App</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Jabalpur</a></li>
+                <li><a class="dropdown-item" href="#">Delhi</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Mumbai</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">Usage Guide</a>
+            </li>
+          </ul> -->
+          <form class="d-flex" role="search">
+            <input
+              id="city"
+              class="form-control me-2"
+              type="search"
+              placeholder="City Name"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit" id="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1 class="my-4 text-center">
+        Weather of <span id="cityName">Jabalpur</span>
+      </h1>
+      <main>
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3 text-bg-primary">
+                <h4 class="my-0 fw-normal">Temperature</h4>
+              </div>
+              <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li><b>Temerature</b> : <span id="temp"></span></li>
+                  <li><b>Min. Temerature</b> : <span id="min_temp"></span></li>
+                  <li><b>Max. Temerature</b> : <span id="max_temp"></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3 text-bg-primary">
+                <h4 class="my-0 fw-normal">Wind Info.</h4>
+              </div>
+
+              <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li><b>Wind Speed</b> : <span id="wind_speed"></span></li>
+                  <li><b>Wind Degree</b> : <span id="wind_degrees"></span></li>
+                  <li><b>Feels like</b> : <span id="feels_like"></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3 text-bg-primary">
+                <h4 class="my-0 fw-normal">Sun Info.</h4>
+              </div>
+              <div class="card-body">
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li><b>Sunrise</b> : <span id="sunrise"></span></li>
+                  <li><b>Sunset</b> : <span id="sunset"></span></li>
+                  <li><b>Humidity</b> : <span id="humidity"></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="display-6 text-center mb-4">Weather of other cities</h2>
+
+        <div class="table-responsive">
+          <table class="table text-center">
+            <thead>
+              <tr>
+                <th style="width: 34%"></th>
+                <th style="width: 22%">Temperature (&#8451)</th>
+                <th style="width: 22%">Max_temp (&#8451)</th>
+                <th style="width: 22%">Min_temp (&#8451)</th>
+                <th style="width: 22%">Wind_speed</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <th scope="row" class="text-start">Delhi</th>
+                <td><span id="delhi_td1">1</span></td>
+                <td><span id="delhi_td2">2</span></td>
+                <td><span id="delhi_td3">3</span></td>
+                <td><span id="delhi_td4">4</span></td>
+              </tr>
+
+              <tr>
+                <th scope="row" class="text-start mumbai">Mumbai</th>
+                <td><span id="mumbai_td1">1</span></td>
+                <td><span id="mumbai_td2">2</span></td>
+                <td><span id="mumbai_td3">3</span></td>
+                <td><span id="mumbai_td4">4</span></td>
+              </tr>
+            </tbody>
+
+            <tbody>
+              <tr>
+                <th scope="row" class="text-start bangalore">Bangalore</th>
+                <td><span id="bangalore_td1">1</span></td>
+                <td><span id="bangalore_td2">2</span></td>
+                <td><span id="bangalore_td3">3</span></td>
+                <td><span id="bangalore_td4">4</span></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-start lucknow">Lucknow</th>
+                <td><span id="lucknow_td1">1</span></td>
+                <td><span id="lucknow_td2">2</span></td>
+                <td><span id="lucknow_td3">3</span></td>
+                <td><span id="lucknow_td4">4</span></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-start gurgaon">Gurgaon</th>
+                <td><span id="gurgaon_td1">1</span></td>
+                <td><span id="gurgaon_td2">2</span></td>
+                <td><span id="gurgaon_td3">3</span></td>
+                <td><span id="gurgaon_td4">4</span></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-start kolkata">Kolkata</th>
+                <td><span id="kolkata_td1">1</span></td>
+                <td><span id="kolkata_td2">2</span></td>
+                <td><span id="kolkata_td3">3</span></td>
+                <td><span id="kolkata_td4">4</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+
+  <script src="script.js"></script>
+</html>
